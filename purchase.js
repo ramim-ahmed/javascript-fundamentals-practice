@@ -29,7 +29,7 @@ const purchaseHistory = [
     voucherNo: 505,
     companyName: "Incepta Pharma",
     paymentMode: "cash",
-    date: "06/02/2024",
+    date: "07/02/2024",
     productList: [
       {
         id: 50,
@@ -51,20 +51,22 @@ const purchaseHistory = [
   },
 ];
 
-function getPurchaseReport(purchaseList) {
+function getPurchaseReport(purchaseList, date) {
   for (const purchase of purchaseList) {
-    const headerTitle = `Voucher Number ${purchase.voucherNo} company ${purchase.companyName} paymode ${purchase.paymentMode} date ${purchase.date}`;
-    console.log(headerTitle);
-    const products = purchase.productList;
-    let list;
-    let totalPurchaseAmount = 0;
-    for (const product of products) {
-      list += `id: ${product.id} name: ${product.name} quantity: ${product.quantity} total_price: ${product.total_price} purchasePrice: ${product.purchasePrice} salePrice: ${product.salePrice} \n`;
-      totalPurchaseAmount += product.total_price;
+    if (purchase.date === date) {
+      const headerTitle = `Voucher Number ${purchase.voucherNo} company ${purchase.companyName} paymode ${purchase.paymentMode} date ${purchase.date}`;
+      console.log(headerTitle);
+      const products = purchase.productList;
+      let list;
+      let totalPurchaseAmount = 0;
+      for (const product of products) {
+        list += `id: ${product.id} name: ${product.name} quantity: ${product.quantity} total_price: ${product.total_price} purchasePrice: ${product.purchasePrice} salePrice: ${product.salePrice} \n`;
+        totalPurchaseAmount += product.total_price;
+      }
+      console.log(list);
+      console.log("Total amount :", totalPurchaseAmount);
     }
-    console.log(list);
-    console.log("Total amount :", totalPurchaseAmount);
   }
 }
 
-const output = getPurchaseReport(purchaseHistory);
+const output = getPurchaseReport(purchaseHistory, "07/02/2024");
