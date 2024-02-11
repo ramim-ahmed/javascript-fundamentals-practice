@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>closure</title>
+    <title>calculate</title>
+    <style>
+        .keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+    </style>
 </head>
 <body>
-    
-    <script src="closure.js"></script>
+    <main style="display: flex; justify-content: center; margin-top: 100px;">
+      <div id="calcuate-container">
+        <input type="text" readonly id="display">
+        <div id="keys" class="keys" style="margin-top: 20px;">
+            <button type="button">+</button>
+            <button type="button">7</button>
+            <button type="button">8</button>
+            <button type="button">9</button>
+            <button type="button">-</button>
+            <button type="button">4</button>
+            <button type="button">5</button>
+            <button type="button">6</button>
+            <button type="button">*</button>
+            <button type="button">3</button>
+            <button type="button">2</button>
+            <button type="button">1</button>
+            <button type="button">/</button>
+            <button type="button">0</button>
+            <button type="button">.</button>
+            <button type="button">=</button>
+            <button type="button">C</button>
+            <button type="button">del</button>
+        </div>
+      </div>
+    </main>
+    <script src="calculate.js" ></script>
 </body>
 </html>
